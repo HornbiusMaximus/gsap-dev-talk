@@ -1,0 +1,186 @@
+$edge-pos: 75px;
+$leo_color: #01a3fe;
+$ralph_color: #dc1a00;
+$donnie_color: #c002fa;
+$mikey_color: #feae01;
+
+%full-screen {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+@mixin bg_gradient($color) {
+    background: rgb(0,0,0);
+    background: -moz-linear-gradient(top, $color 0%, rgba(0,0,0,1) 100%);
+    background: -webkit-linear-gradient(top, $color 0%,rgba(0,0,0,1) 100%);
+    background: linear-gradient(to bottom, $color 0%,rgba(0,0,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$color, endColorstr='#000000',GradientType=0 );
+}
+
+:host {
+    @extend %full-screen;
+    overflow: hidden;
+
+    #bg-subway {
+        @extend %full-screen;
+        background: url('/assets/images/subway_bg.jpg') no-repeat;
+        background-size: cover;
+    }
+    
+    #bg-cover {
+        @extend %full-screen;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    #page-shell {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        max-width: 1024px;
+        max-height: 768px;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+        box-sizing: border-box;
+    
+        #center-title {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate3d(-50%, -40%, 0);
+            z-index: 1;
+    
+            #tmnt-logo {
+                background: url('/assets/images/tmnt_logo.png');
+                width: 462px;
+                height: 184px;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                margin-left: -244px;
+            }
+    
+            #manhole {
+                perspective: 1000px;
+                position: absolute;
+                top: -70px;
+
+                #transition-circle {
+                    position: absolute;
+                    width: 95%;
+                    height: 95%;
+                    border-radius: 50%;
+                    transform: rotateX(60deg) translate3d(10px, 14px, 0);
+                    top: 0;
+                    opacity: 0;
+                    background: #000;
+                    transform-origin: center bottom;
+                    border: 6px solid #909090;
+                    box-sizing: border-box;
+
+                    div {
+                        background: rgb(43,43,43);
+                        background: -moz-linear-gradient(top, rgba(43,43,43,1) 0%, rgba(0,0,0,1) 100%);
+                        background: -webkit-linear-gradient(top, rgba(43,43,43,1) 0%,rgba(0,0,0,1) 100%);
+                        background: linear-gradient(to bottom, rgba(43,43,43,1) 0%,rgba(0,0,0,1) 100%);
+                        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2b2b2b', endColorstr='#000000',GradientType=0 );
+                        width: 100%;
+                        height: 100%;
+                        display: block;
+                        border-radius: 50%;
+                    }
+
+                    &.leo {
+                        background: $leo_color;
+                        //@include bg_gradient($leo_color);
+                    }
+        
+                    &.ralph {
+                        background: $ralph_color;
+                        //@include bg_gradient($ralph_color);
+                    }
+        
+                    &.donnie {
+                        background: $donnie_color;
+                        //@include bg_gradient($donnie_color);
+                    }
+        
+                    &.mikey {
+                        background: $mikey_color;
+                        //@include bg_gradient($mikey_color);
+                    }
+                }
+
+                img {
+                    transform-origin: center bottom;
+                }
+            }
+        }
+
+        .icon {
+            position: absolute;
+            cursor: pointer;
+            border-radius: 50%;
+            border: 4px solid white;
+            height: 200px;
+
+            div {
+                position: absolute;
+                border-radius: 50%;
+                border: 20px solid #fff;
+                width: 50%;
+                height: 50%;
+                top: 50%;
+                left: 50%;
+                transform-origin: center center;
+                transform: translate3d(-50%, -50%, 0);
+                z-index: -1;
+            }
+            
+            img {
+                width: 200px;
+            }
+
+            &#leo {
+                left: $edge-pos;
+                top: $edge-pos;
+
+                &.from-center {
+                    transform: rotateZ(360deg);
+                }
+            }
+
+            &#ralph {
+                right: $edge-pos;
+                top: $edge-pos;
+
+                &.from-center {
+                    transform: rotateZ('360deg');
+                }
+            }
+
+            &#donnie {
+                left: $edge-pos;
+                bottom: $edge-pos;
+
+                &.from-center {
+                    transform: rotateZ('360deg');
+                }
+            }
+
+            &#mikey {
+                right: $edge-pos;
+                bottom: $edge-pos;
+
+                &.from-center {
+                    transform: rotateZ('360deg');
+                }
+            }
+        }
+    }
+}

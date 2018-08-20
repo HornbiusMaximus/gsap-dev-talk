@@ -1,0 +1,19 @@
+<div>
+  <div #bgElement id="bg-subway"></div>
+  <div #bgElement id="bg-cover"></div>
+</div>
+<div id="page-shell">
+  <div id="center-title">
+      <div #manhole id="manhole">
+          <div id="transition-circle" [ngClass]="selectedTurtleClass">
+            <div></div>
+          </div>
+          <img src="assets/images/manhole_cover.svg" width="300" />
+      </div>
+      <div #tmntLogo id="tmnt-logo"></div>
+  </div>
+  <div #icon class="icon" id="{{turtle.id}}" *ngFor="let turtle of ninjaTurtles" (click)="selectTurtle(turtle.id)">
+    <div></div>
+    <img src="assets/images/tmnt_icon_{{turtle.id}}.svg" />
+  </div>
+</div>

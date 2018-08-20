@@ -1,0 +1,223 @@
+$leo_color: #01a3fe;
+$ralph_color: #dc1a00;
+$donnie_color: #c002fa;
+$mikey_color: #feae01;
+
+:host {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+
+    #page-bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+        &.leo {
+            background-color: $leo_color;
+
+            .darken-turtle-bg {
+                background-color: darken($leo_color, 20%) !important;
+            }
+
+            .darken-turtle-border {
+                border-color: darken($leo_color, 20%) !important;
+            }
+
+            #page-shell {
+                #character-title {
+                    .title-bar {
+                        &:after {
+                            border-right-color: $leo_color;
+                            border-bottom-color: $leo_color;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.ralph {
+            background-color: $ralph_color;
+
+            .darken-turtle-bg {
+                background-color: darken($ralph_color, 20%) !important;
+            }
+
+            .darken-turtle-border {
+                border-color: darken($ralph_color, 20%) !important;
+            }
+
+            #page-shell {
+                #character-title {
+                    .title-bar {
+                        &:after {
+                            border-right-color: $ralph_color;
+                            border-bottom-color: $ralph_color;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.donnie {
+            background-color: $donnie_color;
+
+            .darken-turtle-bg {
+                background-color: darken($donnie_color, 20%) !important;
+            }
+
+            .darken-turtle-border {
+                border-color: darken($donnie_color, 20%) !important;
+            }
+
+            #page-shell {
+                #character-title {
+                    .title-bar {
+                        &:after {
+                            border-right-color: $donnie_color;
+                            border-bottom-color: $donnie_color;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.mikey {
+            background-color: $mikey_color;
+
+            .darken-turtle-bg {
+                background-color: darken($mikey_color, 20%) !important;
+            }
+
+            .darken-turtle-border {
+                border-color: darken($mikey_color, 20%) !important;
+            }
+
+            #page-shell {
+                #character-title {
+                    .title-bar {
+                        &:after {
+                            border-right-color: $mikey_color;
+                            border-bottom-color: $mikey_color;
+                        }
+                    }
+                }
+            }
+        }
+
+        #page-shell {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            max-width: 1024px;
+            max-height: 768px;
+            top: 50%;
+            left: 50%;
+            transform: translate3d(-50%, -50%, 0);
+            box-sizing: border-box;
+
+            #character-title {
+                position: absolute;
+                left: 25px;
+                top: 25px;
+
+                .title-bar {
+                    width: 500px;
+                    background: white;
+                    height: 90px;
+                    line-height: 110px;
+                    margin-top: 35px;
+                    margin-left: 100px;
+                    padding-left: 90px;
+                    box-sizing: border-box;
+
+                    span {
+                        font: 600 45px 'OpenSans';
+                        color: #fff;
+                        display: inline-block;
+                        line-height: 90px;
+                        font-style: italic;
+                    }
+                    
+                    &:after {
+                        content: '';
+                        display: block;
+                        height: 90px;
+                        width: 90px;
+                        position: absolute;
+                        right: 0;
+                        bottom: 0;
+                        border: 45px solid black;
+                        box-sizing: border-box;
+                        border-top-color: transparent;
+                        border-left-color: transparent;
+                    }
+                }
+
+                .icon {
+                    position: absolute;
+                    border-radius: 50%;
+                    border: 4px solid white;
+                    height: 150px;
+                    top: 0;
+                    left: 0;
+                    
+                    img {
+                        width: 150px;
+                    }
+                }
+            }
+
+            #content-shell {
+                width: 650px;
+                height: 390px;
+                background: white;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate3d(-50%, -40%, 0);
+                border-radius: 5px;
+                box-shadow: 0px 5px 5px rgba(51, 51, 51, 0.35);
+                padding: 10px 80px;
+                box-sizing: border-box;
+
+                h2 {
+                    text-align: center;
+                    font: 600 25px 'OpenSans';
+                    border-bottom: 1px solid #000;
+                    padding-bottom: 10px;
+                }
+
+                #nav-btns {
+                    .nav-btn {
+                        width: 130px;
+                        height: 130px;
+                        background: gray;
+                        border-radius: 50%;
+                        position: absolute;
+                        bottom: -65px;
+                        cursor: pointer;
+                        box-shadow: inset 0px 0px 0px 4px #fff;
+                        border: 5px solid #000;
+                        box-sizing: border-box;
+                        font: 300 18px 'OpenSans';
+                        color: #fff;
+                        text-align: center;
+                        line-height: 122px;
+
+                        &.bio-btn {
+                            left: -65px;
+                        }
+
+                        &.weapon-btn {
+                            right: -65px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
